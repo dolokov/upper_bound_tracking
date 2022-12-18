@@ -1,0 +1,170 @@
+{
+    "eval_jobs": [
+        {
+            "sequence_name": "/home/alex/data/ubt/projects/1/1/trackannotation.csv",
+            "csv_trackannotation": "/home/alex/data/ubt/projects/1/1/trackannotation.csv",
+            "trackers": [
+                {
+                    "name": "UpperBound (ours)",
+                    "csv_out": "/home/alex/data/ubt/projects/1/tracking_Tracking_under_occlusion_UpperBound_fasterrcnn_2stack_psp_2020-11-25_08-47-15_22772819_rec-00.31.16.854-00.41.46.110-seg4.csv"
+                },
+                {
+                    "name": "DeepSORT",
+                    "csv_out": "/home/alex/data/ubt/projects/1/tracking_label1_DeepSORT_fasterrcnn_2stack_none_2020-11-25_08-47-15_22772819_rec-00.00.00.000-00.10.20.916-seg1.csv"
+                },
+                {
+                    "name": "SORT",
+                    "csv_out": "/home/alex/data/ubt/projects/1/tracking_label1_SORT_fasterrcnn_2stack_none_2020-11-25_08-47-15_22772819_rec-00.00.00.000-00.10.20.916-seg1.csv"
+                },
+                {
+                    "name": "SORT",
+                    "csv_out": "/home/alex/data/ubt/projects/1/tracking_label1_SORT_fasterrcnn_2stack_none_from_above_Oct2020_2.csv"
+                },
+                {
+                    "name": "UpperBound (ours)",
+                    "csv_out": "/home/alex/data/ubt/projects/1/tracking_label1_UpperBound_fasterrcnn_2stack_none_2020-11-25_08-47-15_22772819_rec-00.00.00.000-00.10.20.916-seg1.csv"
+                },
+                {
+                    "name": "UpperBound (ours)",
+                    "csv_out": "/home/alex/data/ubt/projects/1/tracking_label1_UpperBound_fasterrcnn_2stack_none_from_above_Oct2020_2.csv"
+                },
+                {
+                    "name": "VIoU",
+                    "csv_out": "/home/alex/data/ubt/projects/1/tracking_label1_VIoU_fasterrcnn_2stack_none_2020-11-25_08-47-15_22772819_rec-00.00.00.000-00.10.20.916-seg1.csv"
+                }
+            ]
+        },
+        {
+            "sequence_name": "/home/alex/data/ubt/projects/1/9/trackannotation.csv",
+            "csv_trackannotation": "/home/alex/data/ubt/projects/1/9/trackannotation.csv",
+            "trackers": [
+                {
+                    "name": "UpperBound (ours)",
+                    "csv_out": "/home/alex/data/ubt/projects/1/tracking_Tracking_under_occlusion_UpperBound_fasterrcnn_2stack_psp_2020-11-25_08-47-15_22772819_rec-00.31.16.854-00.41.46.110-seg4.csv"
+                },
+                {
+                    "name": "DeepSORT",
+                    "csv_out": "/home/alex/data/ubt/projects/1/tracking_label1_DeepSORT_fasterrcnn_2stack_none_2020-11-25_08-47-15_22772819_rec-00.00.00.000-00.10.20.916-seg1.csv"
+                },
+                {
+                    "name": "SORT",
+                    "csv_out": "/home/alex/data/ubt/projects/1/tracking_label1_SORT_fasterrcnn_2stack_none_2020-11-25_08-47-15_22772819_rec-00.00.00.000-00.10.20.916-seg1.csv"
+                },
+                {
+                    "name": "SORT",
+                    "csv_out": "/home/alex/data/ubt/projects/1/tracking_label1_SORT_fasterrcnn_2stack_none_from_above_Oct2020_2.csv"
+                },
+                {
+                    "name": "UpperBound (ours)",
+                    "csv_out": "/home/alex/data/ubt/projects/1/tracking_label1_UpperBound_fasterrcnn_2stack_none_2020-11-25_08-47-15_22772819_rec-00.00.00.000-00.10.20.916-seg1.csv"
+                },
+                {
+                    "name": "UpperBound (ours)",
+                    "csv_out": "/home/alex/data/ubt/projects/1/tracking_label1_UpperBound_fasterrcnn_2stack_none_from_above_Oct2020_2.csv"
+                },
+                {
+                    "name": "VIoU",
+                    "csv_out": "/home/alex/data/ubt/projects/1/tracking_label1_VIoU_fasterrcnn_2stack_none_2020-11-25_08-47-15_22772819_rec-00.00.00.000-00.10.20.916-seg1.csv"
+                }
+            ]
+        },
+        {
+            "sequence_name": "/home/alex/data/ubt/projects/2/2/trackannotation.csv",
+            "csv_trackannotation": "/home/alex/data/ubt/projects/2/2/trackannotation.csv",
+            "trackers": [
+                {
+                    "name": "SORT",
+                    "csv_out": "/home/alex/data/ubt/projects/2/tracking_label2_SORT_fasterrcnn_2stack_none_2020-11-25_08-47-15_22772819_rec-00.10.28.916-00.20.35.728-seg2.csv"
+                },
+                {
+                    "name": "UpperBound (ours)",
+                    "csv_out": "/home/alex/data/ubt/projects/2/tracking_label2_UpperBound_fasterrcnn_2stack_none_2020-11-25_08-47-15_22772819_rec-00.10.28.916-00.20.35.728-seg2.csv"
+                },
+                {
+                    "name": "VIoU",
+                    "csv_out": "/home/alex/data/ubt/projects/2/tracking_label2_VIoU_fasterrcnn_2stack_none_2020-11-25_08-47-15_22772819_rec-00.10.28.916-00.20.35.728-seg2.csv"
+                }
+            ]
+        },
+        {
+            "sequence_name": "/home/alex/data/ubt/projects/3/3/trackannotation.csv",
+            "csv_trackannotation": "/home/alex/data/ubt/projects/3/3/trackannotation.csv",
+            "trackers": [
+                {
+                    "name": "SORT",
+                    "csv_out": "/home/alex/data/ubt/projects/3/tracking_label3_SORT_fasterrcnn_2stack_none_2020-11-25_08-47-15_22772819_rec-00.20.46.728-00.31.07.854-seg3.csv"
+                },
+                {
+                    "name": "UpperBound (ours)",
+                    "csv_out": "/home/alex/data/ubt/projects/3/tracking_label3_UpperBound_fasterrcnn_2stack_none_2020-11-25_08-47-15_22772819_rec-00.20.46.728-00.31.07.854-seg3.csv"
+                },
+                {
+                    "name": "VIoU",
+                    "csv_out": "/home/alex/data/ubt/projects/3/tracking_label3_VIoU_fasterrcnn_2stack_none_2020-11-25_08-47-15_22772819_rec-00.20.46.728-00.31.07.854-seg3.csv"
+                }
+            ]
+        },
+        {
+            "sequence_name": "/home/alex/data/ubt/projects/4/4/trackannotation.csv",
+            "csv_trackannotation": "/home/alex/data/ubt/projects/4/4/trackannotation.csv",
+            "trackers": [
+                {
+                    "name": "SORT",
+                    "csv_out": "/home/alex/data/ubt/projects/4/tracking_label4_SORT_fasterrcnn_2stack_none_2020-11-25_08-47-15_22772819_rec-00.31.16.854-00.41.46.110-seg4.csv"
+                },
+                {
+                    "name": "UpperBound (ours)",
+                    "csv_out": "/home/alex/data/ubt/projects/4/tracking_label4_UpperBound_fasterrcnn_2stack_none_2020-11-25_08-47-15_22772819_rec-00.31.16.854-00.41.46.110-seg4.csv"
+                },
+                {
+                    "name": "UpperBound (ours)",
+                    "csv_out": "/home/alex/data/ubt/projects/4/tracking_label4_UpperBound_fasterrcnn_2stack_psp_2020-11-25_08-47-15_22772819_rec-00.31.16.854-00.41.46.110-seg4.csv"
+                },
+                {
+                    "name": "VIoU",
+                    "csv_out": "/home/alex/data/ubt/projects/4/tracking_label4_VIoU_fasterrcnn_2stack_none_2020-11-25_08-47-15_22772819_rec-00.31.16.854-00.41.46.110-seg4.csv"
+                }
+            ]
+        },
+        {
+            "sequence_name": "/home/alex/data/ubt/projects/5/6/trackannotation.csv",
+            "csv_trackannotation": "/home/alex/data/ubt/projects/5/6/trackannotation.csv",
+            "trackers": [
+                {
+                    "name": "SORT",
+                    "csv_out": "/home/alex/data/ubt/projects/5/tracking_label5_SORT_fasterrcnn_2stack_none_2020-11-25_08-47-15_22772819_rec-00.52.43.293-01.03.23.952-seg6.csv"
+                },
+                {
+                    "name": "UpperBound (ours)",
+                    "csv_out": "/home/alex/data/ubt/projects/5/tracking_label5_UpperBound_fasterrcnn_2stack_none_2020-11-25_08-47-15_22772819_rec-00.52.43.293-01.03.23.952-seg6.csv"
+                },
+                {
+                    "name": "UpperBound (ours)",
+                    "csv_out": "/home/alex/data/ubt/projects/5/tracking_label5_UpperBound_fasterrcnn_2stack_none_2020-11-25_08-47-15_22772819_rec-01.03.29.702-01.14.08.495-seg7.csv"
+                },
+                {
+                    "name": "VIoU",
+                    "csv_out": "/home/alex/data/ubt/projects/5/tracking_label5_VIoU_fasterrcnn_2stack_none_2020-11-25_08-47-15_22772819_rec-00.52.43.293-01.03.23.952-seg6.csv"
+                }
+            ]
+        },
+        {
+            "sequence_name": "/home/alex/data/ubt/projects/6/8/trackannotation.csv",
+            "csv_trackannotation": "/home/alex/data/ubt/projects/6/8/trackannotation.csv",
+            "trackers": [
+                {
+                    "name": "SORT",
+                    "csv_out": "/home/alex/data/ubt/projects/6/tracking_label5_SORT_fasterrcnn_2stack_none_2020-11-25_08-47-15_22772819_rec-01.03.29.702-01.14.08.495-seg7.csv"
+                },
+                {
+                    "name": "UpperBound (ours)",
+                    "csv_out": "/home/alex/data/ubt/projects/6/tracking_label5_UpperBound_fasterrcnn_2stack_none_2020-11-25_08-47-15_22772819_rec-01.03.29.702-01.14.08.495-seg7.csv"
+                },
+                {
+                    "name": "VIoU",
+                    "csv_out": "/home/alex/data/ubt/projects/6/tracking_label5_VIoU_fasterrcnn_2stack_none_2020-11-25_08-47-15_22772819_rec-01.03.29.702-01.14.08.495-seg7.csv"
+                }
+            ]
+        }
+    ]
+}

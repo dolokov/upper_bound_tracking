@@ -1,0 +1,14 @@
+{
+    "eval_jobs": [
+    	{
+            "sequence_name": "/home/alex/data/ubt/projects/1/1/trackannotation.csv",
+            "csv_trackannotation": "/home/alex/data/ubt/projects/1/1/trackannotation.csv",
+            "trackers": [
+                {
+                    "name": "DeepLabCut",
+                    "csv_out": "/home/alex/data/ubt/projects/1/2020-11-25_08-47-15_22772819_rec-00.00.00.000-00.10.20.916-seg1_DLCoutput.csv"
+                }
+            ]
+        }
+    ]
+}

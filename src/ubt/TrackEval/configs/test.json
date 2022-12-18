@@ -1,0 +1,19 @@
+{
+    "eval_jobs": [
+    	
+        {
+            "sequence_name": "/home/alex/data/ubt/projects/6/8/trackannotation.csv",
+            "csv_trackannotation": "/home/alex/data/ubt/projects/6/8/trackannotation.csv",
+            "trackers": [
+                {
+                    "name": "SORT",
+                    "csv_out": "/home/alex/data/ubt/projects/6/tracking_label5_SORT_fasterrcnn_2stack_none_2020-11-25_08-47-15_22772819_rec-01.03.29.702-01.14.08.495-seg7.csv"
+                },
+                {
+                    "name": "UpperBound (ours)",
+                    "csv_out": "/home/alex/data/ubt/projects/6/tracking_label5_UpperBound_fasterrcnn_2stack_none_2020-11-25_08-47-15_22772819_rec-01.03.29.702-01.14.08.495-seg7.csv"
+                }
+            ]
+        }
+    ]
+}
