@@ -370,7 +370,7 @@ def run(config, detection_model, encoder_model, keypoint_model, min_confidence_b
             }
         args['maximum_nearest_reassign_track_distance'] *= min([Hframe,Wframe])
 
-        tracker = ubocsort.UpperBoundOCSort(args['det_thresh'], args['upper_bound'], 
+        tracker = ubocsort.UpperBoundOCSort(args['upper_bound'], args['det_thresh'],  
             maximum_nearest_reassign_track_distance = args['maximum_nearest_reassign_track_distance'],
             min_missed_steps_before_reassign = args['min_missed_steps_before_reassign'],
             max_age=args['max_age'], min_hits=args['min_hits'], 

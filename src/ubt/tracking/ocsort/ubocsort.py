@@ -195,7 +195,7 @@ ASSO_FUNCS = {  "iou": assocation.iou_batch,
 
 
 class UpperBoundOCSort(object):
-    def __init__(self, det_thresh, upper_bound, maximum_nearest_reassign_track_distance = 0.3, min_missed_steps_before_reassign=3, max_age=30, min_hits=3, 
+    def __init__(self, upper_bound, det_thresh=0.5, maximum_nearest_reassign_track_distance = 0.3, min_missed_steps_before_reassign=3, max_age=30, min_hits=3, 
         iou_threshold=0.3, delta_t=3, asso_func="iou", inertia=0.2, use_byte=False):
         """
         Sets key parameters for SORT
