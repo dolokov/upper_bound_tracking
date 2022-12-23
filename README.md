@@ -18,8 +18,8 @@ upper_bound = 4
 tracker = ubocsort.UpperBoundOCSort(upper_bound)
 while frame is not None:
   _, frame = video_reader.read()
-  detections = object_detector.detect(frame) # detections is np.array and has shape [N,4], each entry [x, y, w, h]
-  tracks = tracker.update(detections, frame.shape) # tracks are [M,5], each entry [track_id, x, y, w, h]
+  detections = object_detector.detect(frame) # detections is np.array and has shape [N, 5], each entry [x, y, w, h, score]
+  tracks = tracker.update(detections, frame.shape) # tracks are [M, 5], each entry [track_id, x, y, w, h]
 ```
 
 ### How use UBT for your data
@@ -75,7 +75,8 @@ python3.7 -m multitracker.tracking --project_id 1 --video /path/to/target_video.
 1) download labeled bounding box and tracking data
 2) import data `python3 -m ubt.be.migrate --mode import --zip /path/to/labeled_detections.zip`
 3) download pretrained detection network
-4) evaluate
+4) prepare evaluation plan
+5) evaluate against GT tracking data
 
 ## Motivation
 Multiple Object Tracking (MOT) is defined in an open world: for each frame it is unknown how many objects are currently observed, and therefore can be visible at the same time. Also the total number of objects seen in the complete video is unknown.
@@ -84,3 +85,33 @@ In this specific use case, requirements differ slightly. Animals are filmed in e
 
 This leads to the definition of Upper Bound Tracking, that tries to track multiple animals with a known upper bound u ∈ N of the video v as the maximum number of indivudual animals filmed at the same time. Therefore a new tracking algorithm was developed to improve fragmentation that exploits the upper bound of videos, called Upper Bound Tracker (UBT). It needs, besides the RGB video stream, the upper bound u ∈ N. It is inspired by the V-IoU tracker and extended by careful consideration before creating new tracks to never have more than u tracks at the same time. Additionally a novel reidentification step is introduced, that updates an inactive and probably lost track to the position of a new detection if u tracks are already present. By introducing the upper bound u, tracking algorithms can exploit the provided additional knowledge to improve matching or reidentification.
 
+## Arguments
+There are several options for object detection, keypoint estimation and tracking. Each combination might give different results and can be easily changed.
+
+`--project_id` ID of the project. Each project has a unique label map.
+
+`--video` path of the MP4 video that should be tracked.
+
+`--train_video_ids` list of video ids that are trained on (eg 1,2,3)
+
+`--test_video_ids` list of video ids that are tested on (eg 3,4)
+
+`--data_dir` directory to save all data and database. defaults to ~/data/multitracker
+
+`--tracking_method` options: DeepSORT, VIoU, UpperBound
+
+`--upper_bound` upper bound number of animals observed
+
+`--keypoint_method` options: none, hourglass2, hourglass4, hourglass8, vgg16, efficientnet, efficientnetLarge, psp. defaults to hourglass2. option none tracks objects without keypoints.
+
+`--keypoint_resolution` resolution used in keypoint detection. defaults to 224x224
+
+`--track_tail` length of drawn tail for all animals in visualization
+
+`--delete_all_checkpoints` delete all checkpoints from directory ~/checkpoints/multitracker
+
+Each predicted bounding box and keypoint comes with its own confidence score indicating how sure the algorithm is the object or keypoint to actually be there. We filter these predictions based on two thresholds, that can be changed:
+
+`--min_confidence_boxes` minimum confidence for an detected animal bounding box, defaults to 0.5
+
+`--min_confidence_keypoints` minimum confidence for an detected limb keypoint, defaults to 0.5
