@@ -46,8 +46,9 @@ python3.7 -m multitracker.be.video -add_project 1 -add_video /path/to/video.mp4
 
 <details>
   <summary>Label Frames</summary>
+  
 Fixed Multitracker tracks objects and keypoints and therefore offers two annotation tools for drawing bounding boxes and setting predefined, project dependent keypoints.
-```
+``` 
 python3.7 -m multitracker.app.app
 ```
 Go to the url `http://localhost:8888/home`. You should see a list of your projects and videos. You then can start each annotation tool with a link for the specific tool and video you want annotate. Please note that you should have an equal number of labeled images for both tasks. We recommend to annotate at least 150 frames, but the more samples the better the detections.
