@@ -8,6 +8,9 @@ git clone https://github.com/dolokov/upper_bound_tracking && cd upper_bound_trac
 conda create --name ubt python=3.7 && conda activate ubt
 conda install pip
 pip install .
+# if framework yolox used:
+conda install cudatoolkit # hotfix for tf bug https://github.com/tensorflow/tensorflow/issues/45930
+cd src/ubt/object_detection/YOLOX && python setup.py install
 ```
 
 ## Getting Started
@@ -30,7 +33,7 @@ First create a new project. A project has a name and a set of keypoint names. It
 ```
 python3.7 -m multitracker.be.project -name MiceTop -manager MyName -keypoint_names nose,tail_base,left_ear,right_ear,left_front_paw,right_front_paw,left_back_paw,right_back_paw 
 ```
-Note, that the keypoint detection uses horizontal and vertical flipping for data augmentation while training, which might violate some label maps. This is automatically fixed by dynamically switching labels of pairs of classes that are simliar expect left and right in the name. (e.g. left_ear and right_ear are switched, l_ear and r_ear are not).
+Note, that the keypoint detection uses horizontal and vertical flipping for data augmentation while training, which might violate some label maps. This is automatically fixed by dynamically switching labels of pairs of classes that are simliar expect left and right in the name. (e.g. `left_ear` and `right_ear` are switched, `l_ear` and `r_ear` are not).
 
 </details>
 
@@ -57,9 +60,18 @@ Go to the url `http://localhost:8888/home`. You should see a list of your projec
 <details>
   <summary>Train Object Detector</summary>
   
+  Prepare the training dataset.
+``` 
+  python3 -m ubt.object_detection.cvt2VOC --train_video_ids 1,2 --test_video_ids 3 --database /path/to/data.db --outdir /path/to/data_dir
+``` 
+  
+Prepare the training configuration. We recommend YoloX-S or YoloX-M. Update your `data_dir` in `yolox_voc_s.py`.
+
+  Download the official pretrained model from [the official YoloX repo](https://github.com/Megvii-BaseDetection/YOLOX#standard-models).
+  
+Then training can be started. The batchsize (-b) should be chosen based on the available GPU memory for training. 
 ```  
-conda install cudatoolkit # hotfix for tf bug https://github.com/tensorflow/tensorflow/issues/45930
-cd src/ubt/object_detection/YOLOX && python setup.py install
+upper_bound_tracking/src/ubt/object_detection/YOLOX$ python -m tools.train -f exps/example/yolox_voc/yolox_voc_s.py -d 1 -b 16 --fp16 -c /path/to/pretrained/yolox_s.pth
 ```
 </details>
 
