@@ -84,6 +84,16 @@ python3.7 -m ubt.tracking --video /path/to/target_video.mp4 --objectdetection_mo
   ```
 </details>
 
+<details>
+  <summary>Run Tracking with Keypoints</summary>
+  
+  You also can use a combined MOT/Keypoint tracking approach. If you have created a project inside UBT and have chosen a keypoint method, it will start training the keypoint model prior to tracking. Alternatively you can use a pretrained keypoint detection network. 
+```
+python3.7 -m ubt.tracking --video /path/to/target_video.mp4 --objectdetection_model /path/to/yolox_checkpoint_dir --project 1 --keypoint_model /path/to/keypoint.h5 --keypoint_method psp --upper_bound 4
+```
+  
+</details>
+
 ### How to evaluate on Mouse Data
 1) download labeled bounding box and tracking data [here](https://drive.google.com/file/d/1ABpsj560McDTLVuvpNGqwfMqKiEczUyC/view?usp=share_link)
 2) import data `python3 -m ubt.be.migrate --mode import --zip /path/to/labeled_data.zip`
