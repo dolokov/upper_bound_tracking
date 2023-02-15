@@ -20,7 +20,6 @@ from datetime import datetime
 import json 
 
 from ubt.keypoint_detection import model , unet, heatmap_drawing
-from ubt.object_detection import augmentation
 from ubt.be import video 
 
 from ubt.be import dbconnection
@@ -513,9 +512,7 @@ def train(config, log_images = True):
                 # noise augmentation
                 if config['kp_im_noise'] and np.random.random() < 0.5:
                     x = tf.keras.layers.GaussianNoise(np.random.uniform(25))(x)
-                if config['kp_im_transf'] and np.random.random() < 0.5:
-                    x, _ = augmentation.random_image_transformation(x,x)
-
+                
                 should_summarize=n%200==0
                 ## if finetuning warmup phase is over, unfreeze all layers including encoding layers and continue fine-tuning
                 if n == config['kp_finetune_warmup']:

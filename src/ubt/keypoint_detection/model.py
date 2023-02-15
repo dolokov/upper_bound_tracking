@@ -179,7 +179,6 @@ def get_config(project_id = 3, data_dir = os.path.expanduser('~/data/multitracke
     config['kp_rotation_augmentation'] = bool(1)
     config['kp_rot90s'] = bool(1)
     config['kp_im_noise'] = bool(1)
-    config['kp_im_transf'] = bool(1)
     config['kp_num_hourglass'] = 2 #8
     config['kp_finetune_warmup'] = 5000
     config['fov'] = 0.75 # default 0.5

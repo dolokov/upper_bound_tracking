@@ -4,7 +4,6 @@ import os
 import torch
 import torch.distributed as dist
 
-from yolox.data import get_yolox_datadir
 from yolox.exp import Exp as MyExp
 
 datadir = os.path.expanduser('~/github/upper_bound_tracking/src/ubt/object_detection/YOLOX/datasets/multitracker')
