@@ -31,7 +31,7 @@ while frame is not None:
  
 First create a new project. A project has a name and a set of keypoint names. It can contain multiple videos.
 ```
-python3.7 -m multitracker.be.project -name MiceTop -manager MyName -keypoint_names nose,tail_base,left_ear,right_ear,left_front_paw,right_front_paw,left_back_paw,right_back_paw 
+python3.7 -m ubt.be.project -name MiceTop -manager MyName -keypoint_names nose,tail_base,left_ear,right_ear,left_front_paw,right_front_paw,left_back_paw,right_back_paw 
 ```
 Note, that the keypoint detection uses horizontal and vertical flipping for data augmentation while training, which might violate some label maps. This is automatically fixed by dynamically switching labels of pairs of classes that are simliar expect left and right in the name. (e.g. `left_ear` and `right_ear` are switched, `l_ear` and `r_ear` are not).
 
@@ -42,7 +42,7 @@ Note, that the keypoint detection uses horizontal and vertical flipping for data
   
   Then add a video to your project with ID 1. It will write every frame of the video to your local disk for later annotation.
 ```
-python3.7 -m multitracker.be.video -add_project 1 -add_video /path/to/video.mp4
+python3.7 -m ubt.be.video -add_project 1 -add_video /path/to/video.mp4
 ```
   
 </details>
@@ -52,7 +52,7 @@ python3.7 -m multitracker.be.video -add_project 1 -add_video /path/to/video.mp4
   
 Fixed Multitracker tracks objects and keypoints and therefore offers two annotation tools for drawing bounding boxes and setting predefined, project dependent keypoints.
 ``` 
-python3.7 -m multitracker.app.app
+python3.7 -m ubt.app.app
 ```
 Go to the url `http://localhost:8888/home`. You should see a list of your projects and videos. You then can start each annotation tool with a link for the specific tool and video you want annotate. Please note that you should have an equal number of labeled images for both tasks. We recommend to annotate at least 150 frames, but the more samples the better the detections.
   
@@ -80,16 +80,17 @@ upper_bound_tracking/src/ubt/object_detection/YOLOX$ python -m tools.train -f ex
 
   Now you can call the actual tracking algorithm. If not provided with pretrained models for object detection and keypoint models, it will train those based on annotations of the supplied video ids.
 ```
-python3.7 -m multitracker.tracking --project_id 1 --video /path/to/target_video.mp4 --objectdetection_model /path/to/yolox_checkpoint_dir
+python3.7 -m ubt.tracking --video /path/to/target_video.mp4 --objectdetection_model /path/to/yolox_checkpoint_dir --upper_bound 4
   ```
 </details>
 
 ### How to evaluate on Mouse Data
-1) download labeled bounding box and tracking data
-2) import data `python3 -m ubt.be.migrate --mode import --zip /path/to/labeled_detections.zip`
-3) download pretrained detection network
-4) prepare evaluation plan
-5) evaluate against GT tracking data
+1) download labeled bounding box and tracking data [here](https://drive.google.com/file/d/1ABpsj560McDTLVuvpNGqwfMqKiEczUyC/view?usp=share_link)
+2) import data `python3 -m ubt.be.migrate --mode import --zip /path/to/labeled_data.zip`
+3) download pretrained detection network [here](https://drive.google.com/file/d/1O-cA7tCmOVY8v-K8EtWECDb6mJsks-QB/view?usp=sharing)
+4) download videos 
+5) prepare evaluation [plan](https://github.com/dolokov/upper_bound_tracking/blob/main/src/ubt/TrackEval/configs/ubocsort.json)
+6) [evaluate](https://github.com/dolokov/upper_bound_tracking/blob/main/src/ubt/TrackEval/scripts/run_multitracker.py) against GT tracking data
 
 ## Motivation
 Multiple Object Tracking (MOT) is defined in an open world: for each frame it is unknown how many objects are currently observed, and therefore can be visible at the same time. Also the total number of objects seen in the complete video is unknown.
