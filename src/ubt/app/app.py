@@ -67,16 +67,17 @@ frame_idx_trackannotation = None#1
 
 frame = None 
 #visual_mot = cv.MultiTracker_create()
-
-tracker_create = [
-    cv.TrackerCSRT_create,
-    cv.TrackerBoosting_create,
-    #cv.TrackerKDF_create,
-    cv.TrackerGOTURN_create,
-    #cv.TrackerHOG_create,
-    cv.TrackerMedianFlow_create
-][3]
-
+try:
+    tracker_create = [
+        cv.TrackerCSRT_create,
+        cv.TrackerBoosting_create,
+        #cv.TrackerKDF_create,
+        cv.TrackerGOTURN_create,
+        #cv.TrackerHOG_create,
+        cv.TrackerMedianFlow_create
+    ][3]
+except:
+    pass 
 
 last_user_boxes = []
 for i in range(args.upper_bound):
