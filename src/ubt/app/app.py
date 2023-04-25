@@ -48,7 +48,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
     os.environ['UBT_DATA_DIR'] = args.data_dir
 from ubt.be import dbconnection
-db = dbconnection.DatabaseConnection(file_db=os.path.join(args.data_dir, 'data.db'))
+db = dbconnection.DatabaseConnection(file_db=os.path.join(os.path.expanduser(args.data_dir), 'data.db'))
 
 count_active_steps = 0 
 
